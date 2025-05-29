@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ربط محفظة TON</title>
+  <script src="https://unpkg.com/@tonconnect/sdk@0.4.2/dist/tonconnect-sdk.min.js"></script>
+</head>
+<body>
+  <h2>ربط محفظتك مع البوت</h2>
+  <button id="connect-wallet">اربط محفظتك</button>
+
+  <script>
+    const tonConnect = new TonConnect();
+
+    document.getElementById('connect-wallet').onclick = async () => {
+      try {
+        const account = await tonConnect.connect();
+        alert('تم الربط! عنوان المحفظة: ' + account.account);
+
+        // إرسال عنوان المحفظة لبوت تلجرام
+        if (window.Telegram?.WebApp) {
+          Telegram.WebApp.sendData(account.account);
+        }
+      } catch (error) {
+        alert('فشل الربط: ' + error.message);
+      }
+    };
+  </script>
+</body>
+</html>
