@@ -2,8 +2,53 @@ body {
   font-family: 'Tahoma', sans-serif;
   background-color: #f5f5f5;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 80px; /* عشان نترك مساحة لشريط التنقل */
   direction: rtl;
+  margin: 0;
+}
+
+/* شريط التنقل */
+nav {
+  background-color: #1e3a8a; /* أزرق غامق */
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* لون مختلف للصفحة الحالية */
+nav ul li a.active {
+  background-color: #facc15; /* أصفر ذهبي */
+  color: #1e3a8a;
+}
+
+nav ul li a:hover {
+  background-color: #374bb3;
 }
 
 h1 {
@@ -13,6 +58,7 @@ h1 {
 p {
   font-size: 18px;
   color: #555;
+  margin: 20px;
 }
 
 button {
@@ -23,42 +69,9 @@ button {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 button:hover {
   background-color: #005f73;
-}
-
-/* شريط التنقل */
-nav {
-  background-color: #008cba;
-  padding: 10px 0;
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
 }
